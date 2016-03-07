@@ -1,8 +1,9 @@
 $faded-colour: rgba(0,0,0,0.4)
+$padding: 20px
 
 =cool-button($colour)
 	display: inline-block
-	padding: 10px
+	padding: $padding / 2
 	background-color: white
 	cursor: pointer
 	border: 1px solid $colour
@@ -24,7 +25,7 @@ body
 	color: black
 	margin: 0
 	color: $faded-colour
-	padding-top: 20px
+	padding-top: $padding
 
 input[type="file"]
 	display: none
@@ -43,7 +44,7 @@ form
 .image-container
 	position: relative
 	width: 70%
-	margin: 20px auto
+	margin: $padding auto
 	display: inherit
 
 	& > img
@@ -66,6 +67,6 @@ form
 		right: 0
 		width: 0
 		height: 0
-		border: 20px solid transparent
+		border: $padding solid transparent
 		border-top-color: $faded-colour
 		border-right-color: $faded-colour
