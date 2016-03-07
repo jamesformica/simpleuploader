@@ -18,3 +18,7 @@ post '/upload' do
 		)
 	redirect '/'
 end
+
+post '/killit' do
+	Upload.last().destroy
+end
