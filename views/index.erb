@@ -3,7 +3,6 @@
 <head>
 	<title>Simple Uploader</title>
 	<link rel="stylesheet" type="text/css" href="/style.css">
-	<script type="text/javascript" src="/jquery-1.11.2.min.js"></script>
 </head>
 <body>
 	<form action="/upload" method="POST" enctype="multipart/form-data">
@@ -12,20 +11,22 @@
 	</form>
 
 	<% if !@image.nil? %>
-		<a href="#" class="ui-killit">Kill It</a>
+		<a href="#" class="ui-killit" onclick="killit()">Kill It</a>
 		<img src="data:image/foo;base64,<%= @image %>" />
 	<% end %>
 
 	<script type="text/javascript">
-		$(".ui-killit").click(function() {
-			$.ajax({
-				url: "/killit",
-				type: "POST",
-				success: function() {
+		function killit() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', '/killit');
+			xhr.send(null);
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
 					location.reload();
 				}
-			});
-		});
+			};
+		}
 	</script>
 
 </body>
