@@ -1,0 +1,11 @@
+img {
+	width: 70%;
+	margin: 10px auto;
+	display: inherit;
+}
+
+form {
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
