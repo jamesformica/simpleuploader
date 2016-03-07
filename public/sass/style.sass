@@ -1,0 +1,71 @@
+$faded-colour: rgba(0,0,0,0.4)
+
+=cool-button($colour)
+	display: inline-block
+	padding: 10px
+	background-color: white
+	cursor: pointer
+	border: 1px solid $colour
+	border-radius: 3px
+	font-size: 14px
+	text-transform: uppercase
+	color: $colour
+
+	&:hover
+		border-color: transparent
+		text-decoration: underline
+
+	&:active
+		outline: none
+
+body
+	text-align: center
+	font-family: 'Verdana'
+	color: black
+	margin: 0
+	color: $faded-colour
+	padding-top: 20px
+
+input[type="file"]
+	display: none
+
+label.button
+	+cool-button(coral)
+
+input[type="submit"]
+	+cool-button(darkturquoise)
+
+form
+	padding: 10px
+	display: block
+	text-align: center
+
+.image-container
+	position: relative
+	width: 70%
+	margin: 20px auto
+	display: inherit
+
+	& > img
+		width: 100%
+		box-shadow: 1px 1px 6px $faded-colour
+
+	& > span
+		position: absolute
+		top: 0
+		right: 0
+		padding-top: 1px
+		padding-right: 6px
+		cursor: pointer
+		color: white
+
+	& > .tri
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		width: 0
+		height: 0
+		border: 20px solid transparent
+		border-top-color: $faded-colour
+		border-right-color: $faded-colour

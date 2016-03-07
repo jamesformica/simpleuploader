@@ -3,31 +3,25 @@
 <head>
 	<title>Simple Uploader</title>
 	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script type="text/javascript" src="/scripts.js"></script>
 </head>
 <body>
 	<form action="/upload" method="POST" enctype="multipart/form-data">
-		<input type="file" accept=".png, .jpg" name="file" />
-		<input type="submit" value="UPLOAD">
+		<span>I'd suggest firstly </span>
+		<label for="file" class="button">Choosing</label>
+		<input id="file" type="file" accept=".png, .jpg" name="file" />
+		<span>a file, followed by </span>
+		<input type="submit" value="Uploading">
+		<span>it.</span>
 	</form>
 
 	<% if !@image.nil? %>
-		<a href="#" class="ui-killit" onclick="killit()">Kill It</a>
+	<div class="image-container">
+		<div class="tri"></div>
+		<span href="#" class="ui-killit" onclick="killit()">x</span>
 		<img src="data:image/foo;base64,<%= @image %>" />
+	</div>
 	<% end %>
-
-	<script type="text/javascript">
-		function killit() {
-			var xhr = new XMLHttpRequest();
-			xhr.open('POST', '/killit');
-			xhr.send(null);
-
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					location.reload();
-				}
-			};
-		}
-	</script>
 
 </body>
 </html>
