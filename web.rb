@@ -5,7 +5,8 @@ require 'base64'
 require './models/upload.rb'
 
 get '/' do
-	@image = Base64.encode64(Upload.last().filecontent)
+	most_recent_image = Upload.last()
+	@image = Base64.encode64(most_recent_image.filecontent) unless most_recent_image.nil?
 	erb :index
 end
 

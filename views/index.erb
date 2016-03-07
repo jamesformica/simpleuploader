@@ -10,7 +10,9 @@
 		<input type="submit" value="UPLOAD">
 	</form>
 
-	<img src="data:image/foo;base64,<%= @image %>" />
+	<% if !@image.nil? %>
+		<img src="data:image/foo;base64,<%= @image %>" />
+	<% end %>
 
 </body>
 </html>
