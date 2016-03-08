@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Uploader</title>
-	<link rel="stylesheet" type="text/css" href="/style.css">
-	<script type="text/javascript" src="/scripts.js"></script>
-</head>
-<body>
-	<form action="/upload" method="POST" enctype="multipart/form-data">
-		<span>I'd suggest firstly </span>
-		
-		<label id="filelabel" class="primary button" for="file">Choosing</label>
-		<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
-		
-		<span>a file, followed by </span>
-		
-		<input class="secondary button" type="submit" value="Uploading">
-		
-		<span>it.</span>
-	</form>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+	<span>I'd suggest firstly </span>
+	
+	<label id="filelabel" class="primary button" for="file">Choosing</label>
+	<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
+	
+	<span>a file, followed by </span>
+	
+	<input class="secondary button" type="submit" value="Uploading">
+	
+	<span>it.</span>
+</form>
 
-	<% if !@image.nil? %>
-	<div class="image-container">
-		<div class="tri"></div>
+<% if !@image.nil? %>
+<div class="image-container">
+	<div class="tri"></div>
 
-		<span href="#" class="ui-killit" onclick="destroy()">x</span>
-		
-		<img src="data:image/foo;base64,<%= @image %>" />
-	</div>
-	<% end %>
-
-</body>
-</html>
+	<span href="#" class="ui-killit" onclick="destroy()">x</span>
+	
+	<img src="data:image/foo;base64,<%= @image %>" />
+</div>
+<% end %>
