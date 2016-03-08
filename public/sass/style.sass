@@ -50,32 +50,28 @@ body
 
 	.image-container
 		position: relative
+		display: inline-block
 		width: 70%
-		margin: $padding * 2 auto
-		display: inherit
+		margin-top: $padding * 2
 
 		& > img
 			width: 100%
 
-		& > span
+		& > .close
 			position: absolute
 			top: 0
 			right: 0
-			padding-top: 1px
-			padding-right: 6px
-			cursor: pointer
+			padding: $padding / 2
 			color: white
+			background-color: $faded-colour
+			font-size: 10px
+			cursor: pointer
 
 			&:hover
 				font-weight: bold
 
-		&:before
-			content: ""
+		& > .filename
 			position: absolute
-			top: 0
+			bottom: -12px
 			right: 0
-			width: 0
-			height: 0
-			border: $padding solid transparent
-			border-top-color: $faded-colour
-			border-right-color: $faded-colour
+			font-size: 10px

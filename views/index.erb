@@ -10,8 +10,9 @@
 
 <% if !@most_recent_image.nil? %>
 <div class="image-container">
-	<span href="#" onclick="destroy()">x</span>
+	<span class="close" href="#" onclick="destroy()">delete</span>
 
 	<img src="/image?id=<%= @most_recent_image.id %>" />
+	<span class="filename"><%= @most_recent_image.filename %>
 </div>
 <% end %>
