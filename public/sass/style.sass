@@ -2,7 +2,7 @@ $faded-colour: rgba(0,0,0,0.4)
 $padding: 20px
 
 body
-	font-family: 'Verdana'
+	font-family: Courier
 	color: $faded-colour
 	text-align: center
 	margin: 0
@@ -21,6 +21,7 @@ body
 		font-size: 14px
 		text-transform: uppercase
 		border: 1px solid transparent
+		font-family: inherit
 
 		&.primary
 			border-color: coral
@@ -64,6 +65,9 @@ body
 			padding-right: 6px
 			cursor: pointer
 			color: white
+
+			&:hover
+				font-weight: bold
 
 		&:before
 			content: ""
