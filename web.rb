@@ -15,7 +15,7 @@ post '/upload' do
 	Upload.create(
 		filename: file[:filename],
 		filecontent: File.open(file[:tempfile], 'rb').read
-		)
+		) unless file.nil?
 	redirect '/'
 end
 

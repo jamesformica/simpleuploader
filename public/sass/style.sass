@@ -1,24 +1,6 @@
 $faded-colour: rgba(0,0,0,0.4)
 $padding: 20px
 
-=cool-button($colour)
-	display: inline-block
-	padding: $padding / 2
-	background-color: white
-	cursor: pointer
-	border: 1px solid $colour
-	border-radius: 3px
-	font-size: 14px
-	text-transform: uppercase
-	color: $colour
-
-	&:hover
-		border-color: transparent
-		text-decoration: underline
-
-	&:active
-		outline: none
-
 body
 	font-family: 'Verdana'
 	color: $faded-colour
@@ -29,12 +11,31 @@ body
 	.hidden
 		display: none
 
-	input[type="submit"]
-		+cool-button(darkturquoise)
-
-	label.button
+	.button
 		position: relative
-		+cool-button(coral)
+		display: inline-block
+		padding: $padding / 2
+		background-color: white
+		cursor: pointer
+		border-radius: 3px
+		font-size: 14px
+		text-transform: uppercase
+		border: 1px solid transparent
+
+		&.primary
+			border-color: coral
+			color: coral
+
+		&.secondary
+			border-color: darkturquoise
+			color: darkturquoise
+
+		&:hover
+			border-color: transparent
+			text-decoration: underline
+
+		&:active, &:focus
+			outline: none
 
 		&:before
 			content: attr(data-filename)

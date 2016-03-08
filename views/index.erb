@@ -9,12 +9,12 @@
 	<form action="/upload" method="POST" enctype="multipart/form-data">
 		<span>I'd suggest firstly </span>
 		
-		<label id="filelabel" for="file" class="button">Choosing</label>
+		<label id="filelabel" class="primary button" for="file">Choosing</label>
 		<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
 		
 		<span>a file, followed by </span>
 		
-		<input type="submit" value="Uploading">
+		<input class="secondary button" type="submit" value="Uploading">
 		
 		<span>it.</span>
 	</form>
