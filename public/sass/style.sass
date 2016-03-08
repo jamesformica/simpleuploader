@@ -6,7 +6,7 @@ body
 	color: $faded-colour
 	text-align: center
 	margin: 0
-	padding-top: $padding
+	padding-top: $padding * 2
 
 	.hidden
 		display: none
@@ -47,15 +47,10 @@ body
 			text-transform: none
 			transform: translateX(-50%)
 
-	form
-		padding: $padding / 2
-		display: block
-		text-align: center
-
 	.image-container
 		position: relative
 		width: 70%
-		margin: $padding auto
+		margin: $padding * 2 auto
 		display: inherit
 
 		& > img
@@ -70,7 +65,8 @@ body
 			cursor: pointer
 			color: white
 
-		& > .tri
+		&:before
+			content: ""
 			position: absolute
 			top: 0
 			right: 0

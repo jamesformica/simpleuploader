@@ -1,21 +1,16 @@
 <form action="/upload" method="POST" enctype="multipart/form-data">
-	<span>I'd suggest firstly </span>
-
+	I'd suggest firstly 
 	<label id="filelabel" class="primary button" for="file">Choosing</label>
-	<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
-
-	<span>a file, followed by </span>
-
+	a file, followed by 
 	<input class="secondary button" type="submit" value="Uploading">
+	it.
 
-	<span>it.</span>
+	<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
 </form>
 
 <% if !@most_recent_image.nil? %>
 <div class="image-container">
-	<div class="tri"></div>
-
-	<span href="#" class="ui-killit" onclick="destroy()">x</span>
+	<span href="#" onclick="destroy()">x</span>
 
 	<img src="/image?id=<%= @most_recent_image.id %>" />
 </div>
