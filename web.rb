@@ -19,6 +19,6 @@ post '/upload' do
 	redirect '/'
 end
 
-post '/killit' do
+post '/destroy' do
 	Upload.last().destroy
 end

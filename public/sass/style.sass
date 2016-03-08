@@ -20,52 +20,61 @@ $padding: 20px
 		outline: none
 
 body
-	text-align: center
 	font-family: 'Verdana'
-	color: black
-	margin: 0
 	color: $faded-colour
+	text-align: center
+	margin: 0
 	padding-top: $padding
 
-input[type="file"]
-	display: none
+	.hidden
+		display: none
 
-label.button
-	+cool-button(coral)
+	input[type="submit"]
+		+cool-button(darkturquoise)
 
-input[type="submit"]
-	+cool-button(darkturquoise)
+	label.button
+		position: relative
+		+cool-button(coral)
 
-form
-	padding: $padding / 2
-	display: block
-	text-align: center
+		&:before
+			content: attr(data-filename)
+			position: absolute
+			top: 105%
+			left: 50%
+			color: $faded-colour
+			font-size: 10px
+			text-transform: none
+			transform: translateX(-50%)
 
-.image-container
-	position: relative
-	width: 70%
-	margin: $padding auto
-	display: inherit
+	form
+		padding: $padding / 2
+		display: block
+		text-align: center
 
-	& > img
-		width: 100%
+	.image-container
+		position: relative
+		width: 70%
+		margin: $padding auto
+		display: inherit
 
-	& > span
-		position: absolute
-		top: 0
-		right: 0
-		padding-top: 1px
-		padding-right: 6px
-		cursor: pointer
-		color: white
+		& > img
+			width: 100%
 
-	& > .tri
-		content: ""
-		position: absolute
-		top: 0
-		right: 0
-		width: 0
-		height: 0
-		border: $padding solid transparent
-		border-top-color: $faded-colour
-		border-right-color: $faded-colour
+		& > span
+			position: absolute
+			top: 0
+			right: 0
+			padding-top: 1px
+			padding-right: 6px
+			cursor: pointer
+			color: white
+
+		& > .tri
+			position: absolute
+			top: 0
+			right: 0
+			width: 0
+			height: 0
+			border: $padding solid transparent
+			border-top-color: $faded-colour
+			border-right-color: $faded-colour

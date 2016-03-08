@@ -1,6 +1,6 @@
-function killit() {
+function destroy() {
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', '/killit');
+	xhr.open('POST', '/destroy');
 	xhr.send(null);
 
 	xhr.onreadystatechange = function() {
@@ -8,4 +8,9 @@ function killit() {
 			location.reload();
 		}
 	};
+}
+
+function showfilename() {
+	var filename = document.getElementById('file').files[0].name;
+	document.getElementById('filelabel').setAttribute("data-filename", filename);
 }
