@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'base64'
 
 require './models/upload.rb'
 
@@ -11,9 +10,12 @@ end
 
 post '/upload' do
 	file = params[:file]
+	real_file = File.open(file[:tempfile], 'rb')
+
 	Upload.create(
 		filename: file[:filename],
-		filecontent: File.open(file[:tempfile], 'rb').read
+		filecontent: real_file.read,
+		size: (File.size(real_file).to_f / 2**20).round(2)
 		) unless file.nil?
 	redirect '/'
 end
