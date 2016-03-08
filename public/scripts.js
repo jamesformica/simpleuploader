@@ -1,7 +1,7 @@
 function destroy() {
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', '/destroy');
-	xhr.send(null);
+	xhr.send();
 
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {

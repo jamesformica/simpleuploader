@@ -5,8 +5,7 @@ require 'base64'
 require './models/upload.rb'
 
 get '/' do
-	most_recent_image = Upload.last()
-	@image = Base64.encode64(most_recent_image.filecontent) unless most_recent_image.nil?
+	@most_recent_image = Upload.last()
 	erb :index
 end
 
@@ -17,6 +16,11 @@ post '/upload' do
 		filecontent: File.open(file[:tempfile], 'rb').read
 		) unless file.nil?
 	redirect '/'
+end
+
+get '/image' do
+	content_type 'image/gif'
+	Upload.find(params[:id].to_i).filecontent
 end
 
 post '/destroy' do
