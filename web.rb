@@ -11,13 +11,10 @@ end
 post '/upload' do
 	file = params[:file]
 	real_file = File.open(file[:tempfile], 'rb')
+	size = (File.size(real_file).to_f / 2**20).round(2)
 
-	Upload.create(
-		filename: file[:filename],
-		filecontent: real_file.read,
-		size: (File.size(real_file).to_f / 2**20).round(2)
-		) unless file.nil?
-	redirect '/'
+	upload = Upload.create(filename: file[:filename], filecontent: real_file.read, size: size) unless file.nil?
+	redirect "/#{upload.id}"
 end
 
 get '/image' do
