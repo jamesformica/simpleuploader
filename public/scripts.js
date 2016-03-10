@@ -1,7 +1,8 @@
-function destroy() {
+function destroy(id) {
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', '/destroy');
-	xhr.send();
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send(encodeURI('id=' + id));
 
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) {

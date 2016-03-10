@@ -1,4 +1,4 @@
-<form action="/upload" method="POST" enctype="multipart/form-data">
+<form class="upload" action="/upload" method="POST" enctype="multipart/form-data">
 	I'd suggest firstly 
 	<label id="filelabel" class="primary button" for="file">Choosing</label>
 	a file, followed by 
@@ -8,11 +8,13 @@
 	<input id="file" class="hidden" type="file" accept=".png, .jpg" name="file" onchange="showfilename()" />
 </form>
 
-<% if !@most_recent_image.nil? %>
-<div class="image-container">
-	<span class="close" href="#" onclick="destroy()">delete</span>
+<div>
+	<% @images.each do |image| %>
+	<div class="image-container">
+		<span class="close" href="#" onclick="destroy(<%= image.id %>)">delete</span>
 
-	<img src="/image?id=<%= @most_recent_image.id %>" />
-	<span class="info"><%= @most_recent_image.filename %> (<%= @most_recent_image.size %> MB)</span>
+		<img src="/image?id=<%= image.id %>" />
+		<span class="info"><%= image.filename %> (<%= image.size %> MB)</span>
+	</div>
+	<% end %>
 </div>
-<% end %>

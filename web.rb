@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require './models/upload.rb'
 
 get '/' do
-	@most_recent_image = Upload.last()
+	@images = Upload.order(created_at: :desc)
 	erb :index
 end
 
@@ -14,7 +14,7 @@ post '/upload' do
 	size = (File.size(real_file).to_f / 2**20).round(2)
 
 	upload = Upload.create(filename: file[:filename], filecontent: real_file.read, size: size) unless file.nil?
-	redirect "/#{upload.id}"
+	redirect '/'
 end
 
 get '/image' do
@@ -23,5 +23,5 @@ get '/image' do
 end
 
 post '/destroy' do
-	Upload.last().destroy
+	Upload.find(params[:id].to_i).destroy
 end
