@@ -33,6 +33,8 @@ GEM
     sqlite3 (1.3.10)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    time_difference (0.4.2)
+      activesupport
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
@@ -44,3 +46,4 @@ DEPENDENCIES
   sinatra (= 1.4.6)
   sinatra-activerecord (= 2.0.4)
   sqlite3 (= 1.3.10)
+  time_difference
