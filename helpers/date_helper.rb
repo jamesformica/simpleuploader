@@ -10,7 +10,7 @@ module DateHelper
 		elsif date_info[:weeks] > 0
 			return self.pluralise("week", date_info[:weeks])
 		elsif date_info[:days] > 0
-			return pluralise("day", date_info[:days])
+			return self.pluralise("day", date_info[:days])
 		elsif date_info[:hours] > 0
 			return self.pluralise("hour", date_info[:hours])
 		elsif date_info[:minutes] > 0
