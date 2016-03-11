@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-
+require './helpers/date_helper.rb'
 require './models/upload.rb'
 
 get '/' do
