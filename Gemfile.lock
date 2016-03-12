@@ -43,7 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg (= 0.17.1)
+  pg
   sass
   sinatra (= 1.4.6)
   sinatra-activerecord (= 2.0.4)
