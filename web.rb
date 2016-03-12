@@ -3,6 +3,10 @@ require 'sinatra/activerecord'
 require './helpers/date_helper.rb'
 require './models/upload.rb'
 
+configure :production do
+	ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+end
+
 get '/' do
 	@images = Upload.order(created_at: :desc)
 	erb :index
