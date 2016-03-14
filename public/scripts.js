@@ -11,7 +11,7 @@ function destroy(id) {
 	};
 }
 
-function showfilename() {
-	var filename = document.getElementById('file').files[0].name;
-	document.getElementById('filelabel').setAttribute("data-filename", filename);
+function showfilename(event) {
+	var filename = event.srcElement.files[0].name;
+	event.srcElement.labels[0].setAttribute("data-filename", filename);
 }
