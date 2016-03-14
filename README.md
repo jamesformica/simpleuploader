@@ -1,4 +1,4 @@
-#### Ruby Sinatra Image Uplaoder (RSIU is a horrible acronym)
+#### Ruby Sinatra Image Uploader (RSIU is a horrible acronym)
 
 ###### Install
 1. Clone the repo to you local workspace using SourceTree or GitBash or anything that works for you.
