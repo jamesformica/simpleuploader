@@ -8,16 +8,11 @@ body
 	margin: 0
 
 	.upload
-		position: fixed
-		top: 0
-		left: 0
 		width: 100%
 		text-align: center
 		background-color: rgba(255, 255, 255, 0.7)
 		padding: $padding
-		z-index: 1000
-		-webkit-backdrop-filter: blur(10px)
-		backdrop-filter: blur(10px)
+		box-sizing: border-box
 
 	.hidden
 		display: none
@@ -26,6 +21,7 @@ body
 		position: relative
 		display: inline-block
 		padding: $padding / 2
+		margin-top: $padding / 2
 		background-color: white
 		cursor: pointer
 		font-size: 14px
@@ -61,11 +57,9 @@ body
 	.image-container
 		position: relative
 		display: inline-block
-		width: 70%
+		width: 100%
+		max-width: 800px
 		margin: $padding * 2 0
-
-		&:first-child
-			margin-top: 100px
 
 		& > img
 			width: 100%
