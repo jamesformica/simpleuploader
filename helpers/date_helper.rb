@@ -21,6 +21,6 @@ module DateHelper
 	end
 
 	def self.pluralise(word, count)
-		return "#{count} #{word}#{count > 1 ? "s" : ""}"
+		return "#{count} #{word}#{count == 1 ? "" : "s"}"
 	end
 end
