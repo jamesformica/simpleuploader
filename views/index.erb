@@ -11,7 +11,7 @@
 <div>
 	<% @images.each do |image| %>
 	<div class="image-container">
-		<span class="close" href="#" onclick="destroy(<%= image.id %>)">delete</span>
+		<span class="delete" href="#" onclick="destroy(<%= image.id %>)">delete</span>
 
 		<img src="/image?id=<%= image.id %>" />
 		<span class="info"><%= image.filename %> (<%= image.size %> MB) <%= DateHelper.since_upload(image.created_at.to_datetime) %></span>
